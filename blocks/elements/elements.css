@@ -1,0 +1,7 @@
+.elements {
+  display: flex;
+  grid-row-gap: 15px;
+  flex-direction: column;
+  align-items: center;
+  width: 282px;
+}

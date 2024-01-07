@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Around the US</title>
+    <link rel="stylesheet" href="pages/index.css" />
+  </head>
+  <body class="body">
+    <div class="page">
+      <header class="header">
+        <img
+          src="images/Vector-Around-US.svg"
+          alt="logotipo que dice Around the
+        US"
+          class="header__logotipo"
+        />
+      </header>
+      <section class="profile">
+        <img
+          src="images/Vector-Avatar.svg"
+          alt="foto de perfil de un señor mayor con
+        un gorro rojo"
+          class="profile__avatar"
+        />
+        <div class="profile__data">
+          <div class="profile__name-area">
+            <p class="profile__name">Jacques Cousteau</p>
+            <button class="profile__edit-button" id="editButton">
+              <img
+                src="images/Vector-edit-button.svg"
+                alt="edit button"
+                class="profil__edit-button-image"
+              />
+            </button>
+          </div>
+          <h4 class="profile__role">Explorer</h4>
+        </div>
+        <button class="profile__add-button">
+          <img
+            src="images/Add-Button-PNG.png"
+            alt="un botón con el signo mas en el medio"
+            class="profile__add-button-image"
+          />
+        </button>
+      </section>
+      <div class="popup" id="popup">
+        <div class="popup__container">
+          <h2 class="popup__container-perfil">Editar perfil</h2>
+          <input
+            type="text"
+            id="nameInput"
+            class="popup__container-nombre"
+            placeholder="Nombre"
+          />
+          <input
+            type="text"
+            id="aboutMeInput"
+            class="popup__container-role"
+            placeholder="Acerca de mí"
+          />
+          <button id="saveButton" class="popup__container-save-button">
+            Guardar
+          </button>
+          <button id="closeButton" class="popup__container-close-button">
+            <img
+              src="images/Close-Icon-PNG.png"
+              alt="close button"
+              class="popup__container-close-button-image"
+            />
+          </button>
+        </div>
+      </div>
+      <section class="elements">
+        <div class="element">
+          <img
+            src="images/image-Yosemite-valley.jpg"
+            alt=" imagen de un rio rodeado de arboles tipo pinos"
+            class="element__image"
+          />
+          <div class="element__rectangle">
+            <h2 class="element__place">
+              Yosemite Valley
+              <button class="element__button">
+                <img
+                  src="images/boton-like-corazon.jpg"
+                  alt="boton de tipo me gusta en forma de corazon"
+                  class="element__button-corazon"
+                />
+              </button>
+            </h2>
+          </div>
+        </div>
+        <div class="element">
+          <img
+            src="images/image-Lake-Louise.jpg"
+            alt=" imagen de un lago color verde esmeralda rodeado de montañas con algo de nieve"
+            class="element__image"
+          />
+          <div class="element__rectangle">
+            <h2 class="element__place">
+              Lake Louise
+              <button class="element__button">
+                <img
+                  src="images/boton-like-corazon.jpg"
+                  alt="boton de tipo me gusta en forma de corazon"
+                  class="element__button-corazon"
+                />
+              </button>
+            </h2>
+          </div>
+        </div>
+        <div class="element">
+          <img
+            src="images/image-Bald-mountains.jpg"
+            alt=" imagen de una vista aerea de montañas en el ocaso de un atardecer"
+            class="element__image"
+          />
+          <div class="element__rectangle">
+            <h2 class="element__place">
+              Bald mountains
+              <button class="element__button">
+                <img
+                  src="images/boton-like-corazon.jpg"
+                  alt="boton de tipo me gusta en forma de corazon"
+                  class="element__button-corazon"
+                />
+              </button>
+            </h2>
+          </div>
+        </div>
+        <div class="element">
+          <img
+            src="images/image-Latemar.jpg"
+            alt=" imagen de una vista aerea de montañas en el ocaso de un atardecer"
+            class="element__image"
+          />
+          <div class="element__rectangle">
+            <h2 class="element__place">
+              Latemar
+              <button class="element__button">
+                <img
+                  src="images/boton-like-corazon.jpg"
+                  alt="boton de tipo me gusta en forma de corazon"
+                  class="element__button-corazon"
+                />
+              </button>
+            </h2>
+          </div>
+        </div>
+        <div class="element">
+          <img
+            src="images/image-Vanoise-national.jpg"
+            alt=" imagen de una vista aerea de montañas en el ocaso de un atardecer"
+            class="element__image"
+          />
+          <div class="element__rectangle">
+            <h2 class="element__place">
+              Vanoise National
+              <button class="element__button">
+                <img
+                  src="images/boton-like-corazon.jpg"
+                  alt="boton de tipo me gusta en forma de corazon"
+                  class="element__button-corazon"
+                />
+              </button>
+            </h2>
+          </div>
+        </div>
+        <div class="element">
+          <img
+            src="images/image-Lago-Di-Braies.jpg"
+            alt=" imagen de una vista aerea de montañas en el ocaso de un atardecer"
+            class="element__image"
+          />
+          <div class="element__rectangle">
+            <h2 class="element__place">
+              Lago Di Braies
+              <button class="element__button">
+                <img
+                  src="images/boton-like-corazon.jpg"
+                  alt="boton de tipo me gusta en forma de corazon"
+                  class="element__button-corazon"
+                />
+              </button>
+            </h2>
+          </div>
+        </div>
+      </section>
+      <footer class="footer">
+        <h6 class="footer__copyright">© 2023 Around The U.S.</h6>
+      </footer>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

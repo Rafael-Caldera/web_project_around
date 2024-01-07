@@ -1,0 +1,209 @@
+@import url("/pages/normalize.css");
+@import url("../blocks/element/element.css");
+@import url("../blocks/element/element__place.css");
+@import url("../blocks/element/element__image.css");
+@import url("../blocks/element/element__rectangle.css");
+@import url("../blocks/element/element__button.css");
+@import url("../blocks/element/element__button-corazon.css");
+@import url("../blocks/elements/elements.css");
+@import url("../blocks/footer/footer.css");
+@import url("../blocks/footer/footer__copyright.css");
+@import url("../blocks/header/header.css");
+@import url("../blocks/header/header__logotipo.css");
+@import url("../blocks/popup/popup.css");
+@import url("../blocks/popup/popup__container.css");
+@import url("../blocks/popup/popup__opened.css");
+@import url("../blocks/popup/popup__container-perfil.css");
+@import url("../blocks/popup/popup__container-nombre.css");
+@import url("../blocks/popup/popup__container-role.css");
+@import url("../blocks/popup/popup__container-close-button.css");
+@import url("../blocks/popup/popup__container-close-button-image.css");
+@import url("../blocks/popup/popup__container-save-button.css");
+@import url("../blocks/profile/profile.css");
+@import url("../blocks/profile/profile__avatar.css");
+@import url("../blocks/profile/profile__data.css");
+@import url("../blocks/profile/profile__name-area.css");
+@import url("../blocks/profile/profile__name.css");
+@import url("../blocks/profile/profile__role.css");
+@import url("../blocks/profile/profile__edit-button.css");
+@import url("../blocks/profile/profile__add-button.css");
+@import url("../blocks/profile/profile__add-button-image.css");
+
+.body {
+  background-color: #000000;
+}
+
+.page {
+  margin: 0 auto;
+  min-width: 320px;
+  max-width: 1280px;
+  background-color: #000000;
+  font-family: "Inter", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media (min-width: 880px) {
+  .page {
+    background-color: #000000;
+  }
+
+  .header {
+    width: 880px;
+    height: 74px;
+  }
+
+  .header__logotipo {
+    width: 173px;
+    height: 33px;
+    margin-left: 10px;
+    margin-top: 0px;
+    margin-bottom: 41px;
+  }
+
+  .profile {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 40px;
+    width: 880px;
+    height: 125px;
+    margin-bottom: 51px;
+  }
+
+  .profile__avatar {
+    border-radius: 50%;
+    margin-bottom: 30px;
+    margin-right: 30px;
+    margin-left: 10px;
+    margin-top: 30px;
+  }
+
+  .profile__data {
+    display: flex;
+    flex-direction: column;
+    margin-top: 55px;
+    width: 415px;
+    height: 77px;
+  }
+
+  .profile__name-area {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    width: 415px;
+    height: 33px;
+    margin-bottom: 0px;
+  }
+
+  .profile__name {
+    font-size: 42px;
+    font-weight: 500;
+    line-height: 33px;
+  }
+
+  .profile__role {
+    display: flex;
+    justify-content: flex-start;
+    width: 415px;
+    height: 22px;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 22px;
+    margin-top: 16px;
+  }
+
+  .profile__edit-button {
+    width: 24px;
+    height: 24px;
+    margin-left: 18px;
+    margin-bottom: 2px;
+  }
+
+  .profile__edit-button:active {
+    opacity: 0.5;
+  }
+
+  .profile__add-button {
+    width: 150px;
+    height: 50px;
+    margin-left: 142px;
+    margin-bottom: 15px;
+  }
+
+  .profile__add-button:active {
+    opacity: 0.5;
+  }
+
+  .profile__add-button-image {
+    background-image: url("../images/mas.png");
+    width: 150px;
+    height: 50px;
+  }
+
+  .elements {
+    display: grid;
+    width: 880px;
+    grid-template-columns: repeat(3, 270px);
+    grid-template-rows: repeat(2, 361px);
+    grid-gap: 15px;
+    justify-content: center;
+  }
+
+  .element {
+    width: 270px;
+    height: 361px;
+  }
+
+  .element__image {
+    width: 270px;
+  }
+
+  .element__rectangle {
+    width: 270px;
+  }
+
+  .element__button-corazon:active {
+    opacity: 0.5;
+  }
+
+  .footer {
+    width: 880px;
+  }
+
+  .footer__copyright {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 22px;
+    letter-spacing: 0em;
+    text-align: left;
+    margin-left: 8px;
+  }
+
+  .popup__container {
+    width: 430px;
+  }
+
+  .popup__container-perfil {
+    font-size: 24px;
+    font-weight: 900;
+    line-height: 29px;
+    letter-spacing: 0em;
+    text-align: left;
+  }
+
+  .popup__container-save-button {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 22px;
+    letter-spacing: 0em;
+    text-align: center;
+    width: 432px;
+    height: 50px;
+  }
+
+  .popup__container-save-button:active {
+    opacity: 0.5;
+  }
+}

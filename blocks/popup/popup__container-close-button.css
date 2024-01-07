@@ -1,0 +1,9 @@
+.popup__container-close-button {
+  position: absolute;
+  right: 8px;
+  top: -45px;
+  border: none;
+  background-size: cover;
+  cursor: pointer;
+  background-color: #000000;
+}

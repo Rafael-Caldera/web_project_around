@@ -1,0 +1,10 @@
+.element__button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-inline-start: auto;
+  background-color: #ffffff;
+  width: 27px;
+  height: 24px;
+  border: none;
+}
