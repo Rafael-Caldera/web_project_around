@@ -10,9 +10,10 @@ _En resumen, el diseño web adaptativo es una técnica que permite a los sitios 
 **JavaScript:** _JavaScript es un lenguaje de programación de alto nivel, interpretado y orientado a objetos. Se utiliza principalmente en el desarrollo web para agregar interactividad y dinamismo a las páginas web. Se puede crear contenido de actualización dinámica que permite crear contenido que se actualiza en tiempo real. También control multimedia que puede controlar elementos multimedia de audio y video, y crear animaciones._
 **El DOM (Document Object Model):** _es una representación estructurada de un documento HTML. Se puede visualizar como un árbol de objetos, donde cada objeto representa una parte del documento, como una etiqueta HTML._
 **Las principales características del DOM son:**
-_**• Estructura de árbol:** El DOM organiza los elementos HTML en una estructura de árbol._
-_**• Acceso y modificación:** Permite acceder y modificar el contenido y la estructura de un documento HTML a través de JavaScript. Esto incluye la adición de nuevas etiquetas, la modificación o eliminación de etiquetas existentes, el cambio de atributos HTML, la adición de clases, el cambio del contenido de texto, etc._
-_**• Interactividad:** Al estar controlado por un lenguaje de programación, todas estas tareas se pueden automatizar, incluso indicando que se realicen cuando el usuario haga acciones determinadas._
+
+1. **Estructura de árbol:** _El DOM organiza los elementos HTML en una estructura de árbol._
+2. **Acceso y modificación:** _Permite acceder y modificar el contenido y la estructura de un documento HTML a través de JavaScript. Esto incluye la adición de nuevas etiquetas, la modificación o eliminación de etiquetas existentes, el cambio de atributos HTML, la adición de clases, el cambio del contenido de texto, etc._
+3. **Interactividad:** _Al estar controlado por un lenguaje de programación, todas estas tareas se pueden automatizar, incluso indicando que se realicen cuando el usuario haga acciones determinadas._
 
 #### Las técnicas utilizadas se pueden nombrar las siguientes:
 
@@ -26,4 +27,4 @@ _**• Interactividad:** Al estar controlado por un lenguaje de programación, t
    **La sintaxis básica de una media query es la siguiente:**
    **@media tipo_de_medio and (expresión de característica de medios) {reglas de estilo}**
 
-   [soy un link](https://github.com/Rafael-Caldera/web_project_homeland/tree/main)
+   [soy un link](https://github.com/Rafael-Caldera/web_project_around)
