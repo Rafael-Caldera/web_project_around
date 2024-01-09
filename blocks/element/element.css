@@ -5,3 +5,10 @@
   width: 281px;
   height: 361px;
 }
+
+@media (min-width: 880px) {
+  .element {
+    width: 270px;
+    height: 361px;
+  }
+}

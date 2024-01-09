@@ -5,3 +5,15 @@
   width: 282px;
   height: 365px;
 }
+
+@media (min-width: 880px) {
+  .profile {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 40px;
+    width: 880px;
+    height: 125px;
+    margin-bottom: 51px;
+  }
+}

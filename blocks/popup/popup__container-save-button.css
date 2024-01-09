@@ -16,3 +16,19 @@
 .popup__container-save-button:hover {
   opacity: 0.5;
 }
+
+@media (min-width: 880px) {
+  .popup__container-save-button {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 22px;
+    letter-spacing: 0em;
+    text-align: center;
+    width: 432px;
+    height: 50px;
+  }
+
+  .popup__container-save-button:active {
+    opacity: 0.5;
+  }
+}

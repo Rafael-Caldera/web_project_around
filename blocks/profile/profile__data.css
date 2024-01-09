@@ -6,3 +6,13 @@
   height: 27px;
   margin-bottom: 55px;
 }
+
+@media (min-width: 880px) {
+  .profile__data {
+    display: flex;
+    flex-direction: column;
+    margin-top: 55px;
+    width: 415px;
+    height: 77px;
+  }
+}

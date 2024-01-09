@@ -11,3 +11,16 @@
 .profile__add-button:hover {
   opacity: 0.5;
 }
+
+@media (min-width: 880px) {
+  .profile__add-button {
+    width: 150px;
+    height: 50px;
+    margin-left: 142px;
+    margin-bottom: 15px;
+  }
+
+  .profile__add-button:active {
+    opacity: 0.5;
+  }
+}

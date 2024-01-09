@@ -2,3 +2,14 @@
   display: flex;
   align-items: center;
 }
+
+@media (min-width: 880px) {
+  .profile__name-area {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    width: 415px;
+    height: 33px;
+    margin-bottom: 0px;
+  }
+}

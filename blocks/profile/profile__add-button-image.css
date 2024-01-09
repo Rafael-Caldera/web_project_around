@@ -2,3 +2,11 @@
   width: 282px;
   height: 50px;
 }
+
+@media (min-width: 880px) {
+  .profile__add-button-image {
+    background-image: url("/images/mas.png");
+    width: 150px;
+    height: 50px;
+  }
+}

@@ -8,3 +8,9 @@
 .element__button-corazon:hover {
   opacity: 0.5;
 }
+
+@media (min-width: 880px) {
+  .element__button-corazon:active {
+    opacity: 0.5;
+  }
+}
