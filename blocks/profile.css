@@ -1,0 +1,181 @@
+.profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 282px;
+  height: 365px;
+}
+
+.profile__avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  margin-bottom: 30px;
+  margin-top: 42px;
+}
+
+.profile__data {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 213px;
+  height: 27px;
+  margin-bottom: 55px;
+}
+
+.profile__name-area {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 282px;
+}
+
+.profile__name {
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 27px;
+  letter-spacing: 0em;
+  text-align: center;
+  color: #ffffff;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 0;
+  margin: 0;
+}
+
+.profile__role-area {
+  display: flex;
+}
+
+.profile__role {
+  width: 282px;
+  height: 18px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 17px;
+  letter-spacing: 0em;
+  text-align: center;
+  margin-top: 8px;
+  color: #ffffff;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.profile__edit-button {
+  width: 20px;
+  height: 20px;
+  margin-left: 9px;
+  border: 1px solid #ffffff;
+  background-color: #000000;
+  transition: opacity 0.3s ease;
+}
+
+.profile__edit-button:hover {
+  opacity: 0.5;
+}
+
+.profile__add-button {
+  display: flex;
+  justify-content: center;
+  width: 282px;
+  height: 50px;
+  border: none;
+  background-color: #000000;
+  transition: opacity 0.3s ease;
+}
+
+.profile__add-button:hover {
+  opacity: 0.5;
+}
+
+.profile__add-button-image {
+  width: 282px;
+  height: 50px;
+}
+
+@media (min-width: 768px) {
+  .profile {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 35px;
+    width: 760px;
+    height: 120px;
+    margin-bottom: 45px;
+  }
+
+  .profile__avatar {
+    border-radius: 50%;
+    margin-bottom: 26px;
+    margin-right: 26px;
+    margin-left: 9px;
+    margin-top: 26px;
+  }
+
+  .profile__data {
+    display: flex;
+    flex-direction: column;
+    margin-top: 48px;
+    width: 362px;
+    height: 67px;
+  }
+
+  .profile__name-area {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    width: 364px;
+    height: 30px;
+    margin-bottom: 0px;
+  }
+
+  .profile__name {
+    font-size: 34px;
+    font-weight: 436;
+    line-height: 29px;
+  }
+
+  .profile__role {
+    width: 362px;
+    height: 19px;
+    font-size: 16px;
+    font-weight: 349;
+    line-height: 19px;
+    margin-top: 14px;
+    text-align: left;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+
+  .profile__edit-button {
+    width: 21px;
+    height: 21px;
+    margin-left: 16px;
+    margin-bottom: 1.7px;
+  }
+
+  .profile__edit-button:active {
+    opacity: 0.5;
+  }
+
+  .profile__add-button {
+    width: 131px;
+    height: 44px;
+    margin-left: 90px;
+    margin-bottom: 13px;
+  }
+
+  .profile__add-button:active {
+    opacity: 0.5;
+  }
+
+  .profile__add-button-image {
+    background-image: url("/images/mas.png");
+    width: 150px;
+    height: 50px;
+  }
+}

@@ -1,0 +1,18 @@
+.elements {
+  display: flex;
+  grid-row-gap: 15px;
+  flex-direction: column;
+  align-items: center;
+  width: 282px;
+}
+
+@media (min-width: 768px) {
+  .elements {
+    display: grid;
+    width: 768px;
+    grid-template-columns: repeat(3, 236px);
+    grid-template-rows: repeat(2, 315px);
+    grid-gap: 13px;
+    justify-content: center;
+  }
+}

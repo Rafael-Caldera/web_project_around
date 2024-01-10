@@ -1,0 +1,31 @@
+.header {
+  display: flex;
+  position: relative;
+  width: 320px;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 45px;
+  border-bottom: 1px solid #545454;
+}
+
+.header__logotipo {
+  width: 126px;
+  height: 24px;
+  margin-bottom: 32px;
+  margin-left: 27px;
+}
+
+@media (min-width: 768px) {
+  .header {
+    width: 768px;
+    height: 65px;
+  }
+
+  .header__logotipo {
+    width: 151px;
+    height: 29px;
+    margin-left: 9px;
+    margin-top: 0px;
+    margin-bottom: 36px;
+  }
+}
