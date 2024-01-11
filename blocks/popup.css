@@ -114,3 +114,49 @@
     opacity: 0.5;
   }
 }
+
+@media (min-width: 1280px) {
+  .popup__container {
+    width: 625px;
+  }
+
+  .popup__container-perfil {
+    font-size: 35px;
+    font-weight: 1308;
+    line-height: 42px;
+    letter-spacing: 0em;
+    text-align: left;
+  }
+
+  .popup__container-nombre {
+    font-size: 23px;
+    font-weight: 600;
+    line-height: 28px;
+    letter-spacing: 0em;
+    text-align: left;
+    margin-bottom: 63px;
+  }
+
+  .popup__container-role {
+    font-size: 23px;
+    font-weight: 600;
+    line-height: 28px;
+    letter-spacing: 0em;
+    text-align: left;
+    margin-bottom: 75px;
+  }
+
+  .popup__container-save-button {
+    font-size: 27px;
+    font-weight: 582;
+    line-height: 32px;
+    letter-spacing: 0em;
+    text-align: center;
+    width: 628px;
+    height: 73px;
+  }
+
+  .popup__container-save-button:active {
+    opacity: 0.5;
+  }
+}

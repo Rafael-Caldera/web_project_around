@@ -14,3 +14,9 @@
     background-color: #000000;
   }
 }
+
+@media (min-width: 1280px) {
+  .page {
+    background-color: #000000;
+  }
+}

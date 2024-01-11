@@ -16,3 +16,14 @@
     justify-content: center;
   }
 }
+
+@media (min-width: 1280px) {
+  .elements {
+    display: grid;
+    width: 1230px;
+    grid-template-columns: repeat(3, 393px);
+    grid-template-rows: repeat(2, 390px);
+    grid-gap: 26px;
+    justify-content: center;
+  }
+}
