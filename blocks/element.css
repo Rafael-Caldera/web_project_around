@@ -84,34 +84,3 @@
     opacity: 0.5;
   }
 }
-
-@media (min-width: 1280px) {
-  .element {
-    width: 393px;
-    height: 390px;
-  }
-
-  .element__image {
-    width: 393px;
-  }
-
-  .element__rectangle {
-    width: 393px;
-    height: 100px;
-  }
-
-  .element__place {
-    width: 292px;
-    font-size: 33px;
-    line-height: 40px;
-  }
-
-  .element__button-corazon {
-    width: 30px;
-    height: 28px;
-  }
-
-  .element__button-corazon:active {
-    opacity: 0.5;
-  }
-}
