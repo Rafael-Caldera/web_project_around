@@ -4,11 +4,12 @@
   align-items: center;
   width: 281px;
   height: 361px;
+  position: relative;
 }
 
 .element__image {
   width: 282px;
-  height: 291px;
+  height: 255px;
   border-top-right-radius: 10px;
   border-top-left-radius: 10px;
 }
@@ -43,21 +44,29 @@
   justify-content: center;
   margin-inline-start: auto;
   background-color: #ffffff;
-  width: 27px;
-  height: 24px;
+  width: 20px;
+  height: 25px;
   margin-left: 0px;
   border: none;
+  background-image: url(../images/corazon_rojo.png);
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 
-.element__button-corazon {
-  display: inline-block;
-  background-size: cover;
-  cursor: pointer;
-  transition: opacity 0.3s ease;
+.element__button_liked {
+  width: 20px;
+  height: 24px;
+  background-image: url(../images/boton-like-corazon.jpg);
 }
 
-.element__button-corazon:hover {
+.element__button:hover {
   opacity: 0.5;
+}
+
+.element__trash-image {
+  position: absolute;
+  top: 18px;
+  right: 15px;
 }
 
 @media (min-width: 768px) {
@@ -80,7 +89,7 @@
     font-size: 20px;
   }
 
-  .element__button-corazon:active {
+  .element__button:active {
     opacity: 0.5;
   }
 }

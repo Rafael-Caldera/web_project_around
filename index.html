@@ -38,7 +38,7 @@
             <p class="profile__role">Explorer</p>
           </div>
         </div>
-        <button class="profile__add-button">
+        <button class="profile__add-button" id="addButton">
           <img
             src="images/Add-Button-PNG.png"
             alt="un botón con el signo mas en el medio"
@@ -61,10 +61,10 @@
             class="popup__container-role"
             placeholder="Acerca de mí"
           />
-          <button id="saveButton" class="popup__container-save-button">
+          <button id="saveEditButton" class="popup__container-save-button">
             Guardar
           </button>
-          <button id="closeButton" class="popup__container-close-button">
+          <button id="closeEditButton" class="popup__container-close-button">
             <img
               src="images/Close-Icon-PNG.png"
               alt="close button"
@@ -73,114 +73,87 @@
           </button>
         </div>
       </div>
-      <section class="elements">
-        <div class="element">
-          <img
-            src="images/image-Yosemite-valley.jpg"
-            alt=" imagen de un rio rodeado de arboles tipo pinos"
-            class="element__image"
+      <div class="popup-tarjeta" id="popup-tarjeta">
+        <div class="popup-tarjeta__container">
+          <h2 class="popup-tarjeta__container-place">Nuevo Lugar</h2>
+          <input
+            type="text"
+            id="titleInput"
+            class="popup-tarjeta__container-title"
+            placeholder="Titulo"
           />
-          <div class="element__rectangle">
-            <h2 class="element__place">Yosemite Valley</h2>
-            <button class="element__button">
+          <input
+            type="text"
+            id="urlInput"
+            class="popup-tarjeta__container-url"
+            placeholder="Enlace a la imagen"
+          />
+          <button
+            id="saveCardButton"
+            class="popup-tarjeta__container-save-button"
+          >
+            Crear
+          </button>
+          <button
+            id="closeCardButton"
+            class="popup-tarjeta__container-close-button"
+          >
+            <img
+              src="images/Close-Icon-PNG.png"
+              alt="close button"
+              class="popup-tarjeta__container-close-button-image"
+            />
+          </button>
+        </div>
+      </div>
+      <div class="image-popup" id="imagePopup">
+        <div class="image-popup__content">
+          <div class="image-popup__image-container">
+            <button
+              class="image-popup__close-button"
+              onclick="closeImagePopup()"
+            >
               <img
-                src="images/boton-like-corazon.jpg"
-                alt="boton de tipo me gusta en forma de corazon"
-                class="element__button-corazon"
+                src="images/Close-Icon-PNG.png"
+                alt="close button"
+                class="image-popup__close-button-icon"
               />
             </button>
+            <img src="#" alt="#" class="image-popup__image" id="popupImage" />
+            <h2 class="image-popup__title" id="popupTitle"></h2>
           </div>
         </div>
-        <div class="element">
-          <img
-            src="images/image-Lake-Louise.jpg"
-            alt=" imagen de un lago color verde esmeralda rodeado de montañas con algo de nieve"
-            class="element__image"
-          />
-          <div class="element__rectangle">
-            <h2 class="element__place">Lake Louise</h2>
-            <button class="element__button">
-              <img
-                src="images/boton-like-corazon.jpg"
-                alt="boton de tipo me gusta en forma de corazon"
-                class="element__button-corazon"
-              />
-            </button>
-          </div>
-        </div>
-        <div class="element">
-          <img
-            src="images/image-Bald-mountains.jpg"
-            alt=" imagen de una vista aerea de montañas en el ocaso de un atardecer"
-            class="element__image"
-          />
-          <div class="element__rectangle">
-            <h2 class="element__place">Bald mountains</h2>
-            <button class="element__button">
-              <img
-                src="images/boton-like-corazon.jpg"
-                alt="boton de tipo me gusta en forma de corazon"
-                class="element__button-corazon"
-              />
-            </button>
-          </div>
-        </div>
-        <div class="element">
-          <img
-            src="images/image-Latemar.jpg"
-            alt=" imagen de una vista aerea de montañas en el ocaso de un atardecer"
-            class="element__image"
-          />
-          <div class="element__rectangle">
-            <h2 class="element__place">Latemar</h2>
-            <button class="element__button">
-              <img
-                src="images/boton-like-corazon.jpg"
-                alt="boton de tipo me gusta en forma de corazon"
-                class="element__button-corazon"
-              />
-            </button>
-          </div>
-        </div>
-        <div class="element">
-          <img
-            src="images/image-Vanoise-national.jpg"
-            alt=" imagen de una vista aerea de montañas en el ocaso de un atardecer"
-            class="element__image"
-          />
-          <div class="element__rectangle">
-            <h2 class="element__place">Vanoise National Park</h2>
-            <button class="element__button">
-              <img
-                src="images/boton-like-corazon.jpg"
-                alt="boton de tipo me gusta en forma de corazon"
-                class="element__button-corazon"
-              />
-            </button>
-          </div>
-        </div>
-        <div class="element">
-          <img
-            src="images/image-Lago-Di-Braies.jpg"
-            alt=" imagen de una vista aerea de montañas en el ocaso de un atardecer"
-            class="element__image"
-          />
-          <div class="element__rectangle">
-            <h2 class="element__place">Lago Di Braies</h2>
-            <button class="element__button">
-              <img
-                src="images/boton-like-corazon.jpg"
-                alt="boton de tipo me gusta en forma de corazon"
-                class="element__button-corazon"
-              />
-            </button>
-          </div>
-        </div>
-      </section>
+      </div>
+      <section class="elements"></section>
       <footer class="footer">
         <p class="footer__copyright">&copy; 2023 Around The U.S.</p>
       </footer>
     </div>
+    <template class="template">
+      <div class="element">
+        <img
+          src="images/image-Yosemite-valley.jpg"
+          alt=" imagen de un rio rodeado de arboles tipo pinos"
+          class="element__image"
+          onclick="openImagePopup(this)"
+        />
+        <div class="element__trash">
+          <img
+            src="images/Trash.svg"
+            alt="imagen de un cesto de basura"
+            class="element__trash-image"
+          />
+        </div>
+        <div class="element__rectangle">
+          <h2 class="element__place">Yosemite Valley</h2>
+          <button
+            class="element__button element__button_liked"
+            id="likeButton"
+            onclick="toggleHeart(this)"
+          ></button>
+        </div>
+      </div>
+    </template>
     <script src="script.js"></script>
   </body>
 </html>
