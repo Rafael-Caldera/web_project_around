@@ -42,6 +42,15 @@ const initialCards = [
   },
 ];
 
+function escapeKeyHandler(evt) {
+  if (evt.key === "Escape") {
+    popup_tarjeta.classList.remove("popup-tarjeta_opened");
+    popup.classList.remove("popup_opened");
+    imagePopup.style.display = "none";
+    document.removeEventListener("keydown", escapeKeyHandler);
+  }
+}
+
 // Crear y añadir las tarjetas al contenedor usando cloneNode
 initialCards.forEach((card) => {
   const cardElement = createCardElement(card.name, card.link);
@@ -71,18 +80,20 @@ function createCardElement(name, link) {
 }
 
 addButton.addEventListener("click", () => {
-  // Asigna valores predeterminados vacíos a los campos de entrada
+  // Asigna valores predeterminados vacíos a los campos de entrada de la ventana Lugares
   titleInput.value = "";
   urlInput.value = "";
 
   // Abre la ventana emergente para agregar una tarjeta
   popup_tarjeta.classList.add("popup-tarjeta_opened");
+  document.addEventListener("keydown", escapeKeyHandler);
 });
 
 editButton.addEventListener("click", () => {
   nameInput.value = nameElement.textContent;
   aboutMeInput.value = roleElement.textContent;
   popup.classList.add("popup_opened");
+  document.addEventListener("keydown", escapeKeyHandler);
 });
 
 closeEditButton.addEventListener("click", () => {
@@ -93,16 +104,18 @@ saveEditButton.addEventListener("click", () => {
   nameElement.textContent = nameInput.value;
   roleElement.textContent = aboutMeInput.value;
   popup.classList.remove("popup_opened");
+  document.removeEventListener("keydown", escapeKeyHandler);
 });
 
 addButton.addEventListener("click", () => {
-  titleInput.value = titleElement.textContent;
-  urlInput.value = urlElement.textContent;
+  titleInput.value = "";
+  urlInput.value = "";
   popup_tarjeta.classList.add("popup-tarjeta_opened");
 });
 
 closeCardButton.addEventListener("click", () => {
   popup_tarjeta.classList.remove("popup-tarjeta_opened");
+  document.removeEventListener("keydown", escapeKeyHandler);
 });
 
 saveCardButton.addEventListener("click", () => {
@@ -138,10 +151,28 @@ function openImagePopup(element) {
   popupTitle.textContent = imageTitle;
   const imagePopup = document.getElementById("imagePopup");
   imagePopup.style.display = "block";
+  document.addEventListener("keydown", escapeKeyHandler);
 }
 
 // Función para cerrar la ventana emergente de la imagen
 function closeImagePopup() {
   const imagePopup = document.getElementById("imagePopup");
   imagePopup.style.display = "none";
+  document.removeEventListener("keydown", escapeKeyHandler);
 }
+
+saveEditButton.addEventListener("click", () => {
+  // Obtener el valor de los campos de entrada
+  const nameValue = nameInput.value.trim();
+  const aboutMeValue = aboutMeInput.value.trim();
+
+  // Verificar si los campos están vacíos
+  if (nameValue === "" || aboutMeValue === "") {
+    alert("Por favor, complete ambos campos: Nombre y Acerca de Mí.");
+  } else {
+    // Si los campos no están vacíos, guardar la información del perfil
+    nameElement.textContent = nameValue;
+    roleElement.textContent = aboutMeValue;
+    popup.classList.remove("popup_opened");
+  }
+});
