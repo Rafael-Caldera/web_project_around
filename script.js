@@ -176,3 +176,162 @@ saveEditButton.addEventListener("click", () => {
     popup.classList.remove("popup_opened");
   }
 });
+
+// Función para el formulario de Editar Perfil:
+function enableValidation(config) {
+  const formElement = document.querySelector(config.formSelector);
+  const inputList = Array.from(
+    formElement.querySelectorAll(config.inputSelector)
+  );
+  const submitButton = formElement.querySelector(config.submitButtonSelector);
+
+  function showInputError(inputElement, errorMessage) {
+    const errorElement = formElement.querySelector(`#${inputElement.id}-error`);
+    inputElement.classList.add(config.inputErrorClass);
+    errorElement.textContent = errorMessage;
+    errorElement.classList.add(config.errorClass);
+  }
+
+  function hideInputError(inputElement) {
+    const errorElement = formElement.querySelector(`#${inputElement.id}-error`);
+    inputElement.classList.remove(config.inputErrorClass);
+    errorElement.textContent = "";
+    errorElement.classList.remove(config.errorClass);
+  }
+
+  function checkInputValidity(inputElement) {
+    if (!inputElement.validity.valid) {
+      showInputError(inputElement, inputElement.validationMessage);
+    } else {
+      hideInputError(inputElement);
+    }
+  }
+
+  function toggleButtonState() {
+    const isFormValid = inputList.every(
+      (inputElement) => inputElement.validity.valid
+    );
+
+    const isAnyFieldFilled = inputList.some(
+      (inputElement) => inputElement.value.trim() !== ""
+    );
+
+    if (isFormValid && isAnyFieldFilled) {
+      submitButton.classList.remove("popup__container-save-button_disabled");
+      submitButton.disabled = false;
+    } else {
+      submitButton.classList.add("popup__container-save-button_disabled");
+      submitButton.disabled = true;
+    }
+  }
+
+  function setEventListeners() {
+    inputList.forEach((inputElement) => {
+      inputElement.addEventListener("input", function () {
+        checkInputValidity(inputElement);
+        toggleButtonState();
+      });
+    });
+
+    formElement.addEventListener("submit", function (evt) {
+      evt.preventDefault();
+    });
+
+    toggleButtonState();
+  }
+
+  setEventListeners();
+}
+
+// Función para el formulario de Nuevo Lugar:
+function enablePlaceValidation(config) {
+  const formElement = document.querySelector(config.formSelector);
+  const inputList = Array.from(
+    formElement.querySelectorAll(config.inputSelector)
+  );
+  const submitButton = formElement.querySelector(config.submitButtonSelector);
+
+  function showInputError(inputElement, errorMessage) {
+    const errorElement = formElement.querySelector(`#${inputElement.id}-error`);
+    inputElement.classList.add(config.inputErrorClass);
+    errorElement.textContent = errorMessage;
+    errorElement.classList.add(config.errorClass);
+  }
+
+  function hideInputError(inputElement) {
+    const errorElement = formElement.querySelector(`#${inputElement.id}-error`);
+    inputElement.classList.remove(config.inputErrorClass);
+    errorElement.textContent = "";
+    errorElement.classList.remove(config.errorClass);
+  }
+
+  function checkInputValidity(inputElement) {
+    if (!inputElement.validity.valid) {
+      showInputError(inputElement, inputElement.validationMessage);
+    } else {
+      hideInputError(inputElement);
+    }
+  }
+
+  function toggleButtonState() {
+    const isValid = inputList.every(
+      (inputElement) => inputElement.validity.valid
+    );
+    if (isValid) {
+      submitButton.classList.remove(config.inactiveButtonClass);
+      submitButton.disabled = false;
+    } else {
+      submitButton.classList.add(config.inactiveButtonClass);
+      submitButton.disabled = true;
+    }
+  }
+
+  function setEventListeners() {
+    inputList.forEach((inputElement) => {
+      inputElement.addEventListener("input", function () {
+        checkInputValidity(inputElement);
+        toggleButtonState();
+      });
+    });
+
+    formElement.addEventListener("submit", function (evt) {
+      evt.preventDefault();
+    });
+
+    toggleButtonState();
+  }
+
+  setEventListeners();
+}
+
+// Función para cerrar las ventanas emergentes con el click del mouse
+function closePopupOnOverlayClick() {
+  const popups = document.querySelectorAll(".popup, .popup-tarjeta");
+
+  popups.forEach((popup) => {
+    popup.addEventListener("click", function (event) {
+      if (event.target === popup) {
+        popup.classList.remove("popup_opened");
+        popup.classList.remove("popup-tarjeta_opened");
+      }
+    });
+  });
+}
+
+closePopupOnOverlayClick();
+
+// Función para cerrar las ventanas emergentes de las imagenes
+function closeImagePopupOnOverlayClick(event) {
+  const imagePopup = document.getElementById("imagePopup");
+  const imageContainer = document.querySelector(".image-popup__content");
+  if (event.target === imageContainer) {
+    imagePopup.style.display = "none";
+  }
+
+  if (event.target === imagePopup) {
+    imagePopup.style.display = "none";
+  }
+}
+
+// Asociar evento de clic a la superposición para cerrar la ventana emergente de las imágenes
+document.addEventListener("click", closeImagePopupOnOverlayClick);

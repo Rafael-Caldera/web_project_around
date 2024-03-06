@@ -55,15 +55,25 @@
             id="nameInput"
             class="popup__container-nombre"
             placeholder="Nombre"
+            minlength="2"
+            maxlength="40"
           />
+          <div class="popup__container-error" id="nameInput-error"></div>
           <input
             type="text"
             required
             id="aboutMeInput"
             class="popup__container-role"
             placeholder="Acerca de mí"
+            minlength="2"
+            maxlength="200"
           />
-          <button id="saveEditButton" class="popup__container-save-button">
+          <div class="popup__container-error" id="aboutMeInput-error"></div>
+          <button
+            type="submit"
+            id="saveEditButton"
+            class="popup__container-save-button"
+          >
             Guardar
           </button>
           <button id="closeEditButton" class="popup__container-close-button">
@@ -84,14 +94,21 @@
             id="titleInput"
             class="popup-tarjeta__container-title"
             placeholder="Titulo"
+            minlength="2"
+            maxlength="30"
           />
+          <div
+            class="popup-tarjeta__container-error"
+            id="titleInput-error"
+          ></div>
           <input
-            type="text"
+            type="url"
             required
             id="urlInput"
             class="popup-tarjeta__container-url"
-            placeholder="Enlace a la imagen"
+            placeholder="URL de la imagen"
           />
+          <div class="popup-tarjeta__container-error" id="urlInput-error"></div>
           <button
             id="saveCardButton"
             class="popup-tarjeta__container-save-button"
@@ -159,5 +176,6 @@
       </div>
     </template>
     <script src="script.js"></script>
+    <script src="validate.js"></script>
   </body>
 </html>
