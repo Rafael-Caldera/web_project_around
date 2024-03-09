@@ -69,6 +69,10 @@
   right: 15px;
 }
 
+.element__trash-image:hover {
+  opacity: 0.5;
+}
+
 @media (min-width: 768px) {
   .element {
     width: 236px;
@@ -90,6 +94,10 @@
   }
 
   .element__button:active {
+    opacity: 0.5;
+  }
+
+  .element__trash-image:active {
     opacity: 0.5;
   }
 }

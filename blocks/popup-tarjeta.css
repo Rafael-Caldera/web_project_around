@@ -23,17 +23,6 @@
   display: flex;
 }
 
-.popup-tarjeta__container-title {
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 17px;
-  letter-spacing: 0em;
-  text-align: left;
-  margin-bottom: 6px;
-  border: none;
-  border-bottom: 1px solid #545454;
-}
-
 .popup-tarjeta__container-place {
   font-size: 18px;
   font-weight: 900;
@@ -41,17 +30,6 @@
   letter-spacing: 0em;
   text-align: left;
   margin-bottom: 70px;
-}
-
-.popup-tarjeta__container-url {
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 17px;
-  letter-spacing: 0em;
-  text-align: left;
-  margin-bottom: 6px;
-  border: none;
-  border-bottom: 1px solid #545454;
 }
 
 .popup-tarjeta__container-close-button {
@@ -64,37 +42,13 @@
   background-color: #000000;
 }
 
-.popup-tarjeta__container-close-button-image {
-  width: 20px;
-  height: 20px;
-}
-
-.popup-tarjeta__container-save-button {
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 17px;
-  letter-spacing: 0em;
-  text-align: center;
-  width: 250px;
-  height: 46px;
-  border: none;
-  color: #ffffff;
-  background-color: #000000;
-  cursor: pointer;
-  transition: opacity 0.3s ease;
-}
-
-.popup-tarjeta__container-save-button:hover {
+.popup-tarjeta__container-close-button:hover {
   opacity: 0.5;
 }
 
-.popup-tarjeta__container-error {
-  width: 220px;
-  height: 16px;
-  margin-bottom: 38px;
-  font-weight: 400;
-  font-size: 12px;
-  color: #0c40fd;
+.popup-tarjeta__container-close-button-image {
+  width: 20px;
+  height: 20px;
 }
 
 .popup-tarjeta__container-save-button_disabled {
@@ -115,19 +69,5 @@
     line-height: 25px;
     letter-spacing: 0em;
     text-align: left;
-  }
-
-  .popup-tarjeta__container-save-button {
-    font-size: 16px;
-    font-weight: 349;
-    line-height: 19px;
-    letter-spacing: 0em;
-    text-align: center;
-    width: 377px;
-    height: 44px;
-  }
-
-  .popup-tarjeta__container-save-button:active {
-    opacity: 0.5;
   }
 }

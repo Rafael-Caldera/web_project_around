@@ -1,5 +1,5 @@
 const popup = document.getElementById("popup");
-const popup_tarjeta = document.getElementById("popup-tarjeta");
+const popupTarjeta = document.getElementById("popup-tarjeta");
 const editButton = document.getElementById("editButton");
 const addButton = document.getElementById("addButton"); // Agregar el botón de añadir
 const closeEditButton = document.getElementById("closeEditButton");
@@ -44,7 +44,7 @@ const initialCards = [
 
 function escapeKeyHandler(evt) {
   if (evt.key === "Escape") {
-    popup_tarjeta.classList.remove("popup-tarjeta_opened");
+    popupTarjeta.classList.remove("popup-tarjeta_opened");
     popup.classList.remove("popup_opened");
     imagePopup.style.display = "none";
     document.removeEventListener("keydown", escapeKeyHandler);
@@ -85,7 +85,7 @@ addButton.addEventListener("click", () => {
   urlInput.value = "";
 
   // Abre la ventana emergente para agregar una tarjeta
-  popup_tarjeta.classList.add("popup-tarjeta_opened");
+  popupTarjeta.classList.add("popup-tarjeta_opened");
   document.addEventListener("keydown", escapeKeyHandler);
 });
 
@@ -110,11 +110,11 @@ saveEditButton.addEventListener("click", () => {
 addButton.addEventListener("click", () => {
   titleInput.value = "";
   urlInput.value = "";
-  popup_tarjeta.classList.add("popup-tarjeta_opened");
+  popupTarjeta.classList.add("popup-tarjeta_opened");
 });
 
 closeCardButton.addEventListener("click", () => {
-  popup_tarjeta.classList.remove("popup-tarjeta_opened");
+  popupTarjeta.classList.remove("popup-tarjeta_opened");
   document.removeEventListener("keydown", escapeKeyHandler);
 });
 
@@ -129,7 +129,7 @@ saveCardButton.addEventListener("click", () => {
     titleInput.value = "";
     urlInput.value = "";
 
-    popup_tarjeta.classList.remove("popup-tarjeta_opened");
+    popupTarjeta.classList.remove("popup-tarjeta_opened");
   } else {
     alert("Por favor, complete ambos campos: título y enlace URL.");
   }
@@ -148,6 +148,7 @@ function openImagePopup(element) {
   const popupImage = document.getElementById("popupImage");
   const popupTitle = document.getElementById("popupTitle");
   popupImage.src = imageUrl;
+  popupImage.alt = "La imagen de : " + imageTitle;
   popupTitle.textContent = imageTitle;
   const imagePopup = document.getElementById("imagePopup");
   imagePopup.style.display = "block";
@@ -176,133 +177,6 @@ saveEditButton.addEventListener("click", () => {
     popup.classList.remove("popup_opened");
   }
 });
-
-// Función para el formulario de Editar Perfil:
-function enableValidation(config) {
-  const formElement = document.querySelector(config.formSelector);
-  const inputList = Array.from(
-    formElement.querySelectorAll(config.inputSelector)
-  );
-  const submitButton = formElement.querySelector(config.submitButtonSelector);
-
-  function showInputError(inputElement, errorMessage) {
-    const errorElement = formElement.querySelector(`#${inputElement.id}-error`);
-    inputElement.classList.add(config.inputErrorClass);
-    errorElement.textContent = errorMessage;
-    errorElement.classList.add(config.errorClass);
-  }
-
-  function hideInputError(inputElement) {
-    const errorElement = formElement.querySelector(`#${inputElement.id}-error`);
-    inputElement.classList.remove(config.inputErrorClass);
-    errorElement.textContent = "";
-    errorElement.classList.remove(config.errorClass);
-  }
-
-  function checkInputValidity(inputElement) {
-    if (!inputElement.validity.valid) {
-      showInputError(inputElement, inputElement.validationMessage);
-    } else {
-      hideInputError(inputElement);
-    }
-  }
-
-  function toggleButtonState() {
-    const isFormValid = inputList.every(
-      (inputElement) => inputElement.validity.valid
-    );
-
-    const isAnyFieldFilled = inputList.some(
-      (inputElement) => inputElement.value.trim() !== ""
-    );
-
-    if (isFormValid && isAnyFieldFilled) {
-      submitButton.classList.remove("popup__container-save-button_disabled");
-      submitButton.disabled = false;
-    } else {
-      submitButton.classList.add("popup__container-save-button_disabled");
-      submitButton.disabled = true;
-    }
-  }
-
-  function setEventListeners() {
-    inputList.forEach((inputElement) => {
-      inputElement.addEventListener("input", function () {
-        checkInputValidity(inputElement);
-        toggleButtonState();
-      });
-    });
-
-    formElement.addEventListener("submit", function (evt) {
-      evt.preventDefault();
-    });
-
-    toggleButtonState();
-  }
-
-  setEventListeners();
-}
-
-// Función para el formulario de Nuevo Lugar:
-function enablePlaceValidation(config) {
-  const formElement = document.querySelector(config.formSelector);
-  const inputList = Array.from(
-    formElement.querySelectorAll(config.inputSelector)
-  );
-  const submitButton = formElement.querySelector(config.submitButtonSelector);
-
-  function showInputError(inputElement, errorMessage) {
-    const errorElement = formElement.querySelector(`#${inputElement.id}-error`);
-    inputElement.classList.add(config.inputErrorClass);
-    errorElement.textContent = errorMessage;
-    errorElement.classList.add(config.errorClass);
-  }
-
-  function hideInputError(inputElement) {
-    const errorElement = formElement.querySelector(`#${inputElement.id}-error`);
-    inputElement.classList.remove(config.inputErrorClass);
-    errorElement.textContent = "";
-    errorElement.classList.remove(config.errorClass);
-  }
-
-  function checkInputValidity(inputElement) {
-    if (!inputElement.validity.valid) {
-      showInputError(inputElement, inputElement.validationMessage);
-    } else {
-      hideInputError(inputElement);
-    }
-  }
-
-  function toggleButtonState() {
-    const isValid = inputList.every(
-      (inputElement) => inputElement.validity.valid
-    );
-    if (isValid) {
-      submitButton.classList.remove(config.inactiveButtonClass);
-      submitButton.disabled = false;
-    } else {
-      submitButton.classList.add(config.inactiveButtonClass);
-      submitButton.disabled = true;
-    }
-  }
-
-  function setEventListeners() {
-    inputList.forEach((inputElement) => {
-      inputElement.addEventListener("input", function () {
-        checkInputValidity(inputElement);
-        toggleButtonState();
-      });
-    });
-
-    formElement.addEventListener("submit", function (evt) {
-      evt.preventDefault();
-    });
-
-    toggleButtonState();
-  }
-
-  setEventListeners();
-}
 
 // Función para cerrar las ventanas emergentes con el click del mouse
 function closePopupOnOverlayClick() {

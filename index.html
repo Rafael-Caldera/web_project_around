@@ -2,9 +2,19 @@
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
+    <meta
+      name="Around the United States"
+      content="Proyecto de imagenes de Lugares Naturales en los Estados Unidos"
+    />
+    <meta name="keywords" content="HTML, CSS, JavaScript" />
+    <meta
+      name="Rafael Caldera"
+      content="Pagina web para agregar imagenes de paisajes en los Estados Unidos con el nombre del lugar"
+    />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Around the US</title>
     <link rel="stylesheet" href="pages/index.css" />
+    <link rel="icon" href="images/Tripleten-icon.ico" />
   </head>
   <body class="body">
     <div class="page">
@@ -49,33 +59,31 @@
       <div class="popup" id="popup">
         <div class="popup__container">
           <h2 class="popup__container-perfil">Editar perfil</h2>
-          <input
-            type="text"
-            required
-            id="nameInput"
-            class="popup__container-nombre"
-            placeholder="Nombre"
-            minlength="2"
-            maxlength="40"
-          />
-          <div class="popup__container-error" id="nameInput-error"></div>
-          <input
-            type="text"
-            required
-            id="aboutMeInput"
-            class="popup__container-role"
-            placeholder="Acerca de mí"
-            minlength="2"
-            maxlength="200"
-          />
-          <div class="popup__container-error" id="aboutMeInput-error"></div>
-          <button
-            type="submit"
-            id="saveEditButton"
-            class="popup__container-save-button"
-          >
-            Guardar
-          </button>
+          <form class="form" id="form-profile">
+            <input
+              type="text"
+              required
+              id="nameInput"
+              class="form__input"
+              placeholder="Nombre"
+              minlength="2"
+              maxlength="40"
+            />
+            <div class="form__error" id="nameInput-error"></div>
+            <input
+              type="text"
+              required
+              id="aboutMeInput"
+              class="form__input"
+              placeholder="Acerca de mí"
+              minlength="2"
+              maxlength="200"
+            />
+            <div class="form__error" id="aboutMeInput-error"></div>
+            <button type="submit" id="saveEditButton" class="form__submit">
+              Guardar
+            </button>
+          </form>
           <button id="closeEditButton" class="popup__container-close-button">
             <img
               src="images/Close-Icon-PNG.png"
@@ -88,33 +96,27 @@
       <div class="popup-tarjeta" id="popup-tarjeta">
         <div class="popup-tarjeta__container">
           <h2 class="popup-tarjeta__container-place">Nuevo Lugar</h2>
-          <input
-            type="text"
-            required
-            id="titleInput"
-            class="popup-tarjeta__container-title"
-            placeholder="Titulo"
-            minlength="2"
-            maxlength="30"
-          />
-          <div
-            class="popup-tarjeta__container-error"
-            id="titleInput-error"
-          ></div>
-          <input
-            type="url"
-            required
-            id="urlInput"
-            class="popup-tarjeta__container-url"
-            placeholder="URL de la imagen"
-          />
-          <div class="popup-tarjeta__container-error" id="urlInput-error"></div>
-          <button
-            id="saveCardButton"
-            class="popup-tarjeta__container-save-button"
-          >
-            Crear
-          </button>
+          <form class="form">
+            <input
+              type="text"
+              required
+              id="titleInput"
+              class="form__input"
+              placeholder="Titulo"
+              minlength="2"
+              maxlength="30"
+            />
+            <div class="form__error" id="titleInput-error"></div>
+            <input
+              type="url"
+              required
+              id="urlInput"
+              class="form__input"
+              placeholder="URL de la imagen"
+            />
+            <div class="form__error" id="urlInput-error"></div>
+            <button id="saveCardButton" class="form__submit">Crear</button>
+          </form>
           <button
             id="closeCardButton"
             class="popup-tarjeta__container-close-button"
@@ -175,7 +177,7 @@
         </div>
       </div>
     </template>
-    <script src="script.js"></script>
+    <script src="index.js"></script>
     <script src="validate.js"></script>
   </body>
 </html>
