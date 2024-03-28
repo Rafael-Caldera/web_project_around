@@ -1,5 +1,3 @@
-// habilitar la validación llamando a enableValidation()
-// pasar todas las configuraciones en la llamada
 enableValidation({
   formSelector: ".form",
   inputSelector: ".form__input",
