@@ -1,11 +1,12 @@
+import "./pages/index.css";
+
 import Card from "./Card.js";
 import FormValidator from "./FormValidator.js";
-import {
-  closeImagePopup,
-  escapeKeyHandler,
-  popupTarjeta,
-  closeImagePopupOnOverlayClick,
-} from "./utils.js";
+import Section from "./Section.js";
+import Popup from "./Popup.js";
+import PopupWithImage from "./PopupWithImage.js";
+import PopupWithForm from "./PopupWithForm.js";
+import UserInfo from "./UserInfo.js";
 
 const popup = document.getElementById("popup");
 const nameElement = document.querySelector(".profile__name");
@@ -46,16 +47,13 @@ const initialCards = [
   },
 ];
 
-// Crear instancia de la clase Card para cada tarjeta
-initialCards.forEach((cardData) => {
-  const card = new Card(cardData, ".template");
-  const cardElement = card.generateCard();
-  elementsContainer.appendChild(cardElement);
-});
+function showImagePopup(name, link) {
+  popupWithImage.open(link, name);
+}
 
 // Crear instancia de la clase FormValidator para cada formulario
 const editProfileForm = document.getElementById("form-profile");
-const newCardForm = document.querySelector(".popup-tarjeta form");
+const newCardForm = document.querySelector(".popup_tarjeta form");
 
 const editProfileFormValidator = new FormValidator(
   {
@@ -84,56 +82,67 @@ const newCardFormValidator = new FormValidator(
 editProfileFormValidator.enableValidation();
 newCardFormValidator.enableValidation();
 
+// Crear instancia de la clase Section
+const section = new Section(
+  {
+    items: initialCards,
+    renderer: (item) => {
+      const card = new Card(item, ".template", {
+        handleCardClick: showImagePopup,
+      });
+      const cardElement = card.generateCard();
+      section.addItem(cardElement);
+    },
+  },
+  ".elements"
+);
+
+// Crear instancia de la clase Popup
+const popupInstance = new Popup(".popup");
+popupInstance.setEventListeners();
+
+// Abrir el popup
+popupInstance.open();
+
+// Cerrar el popup
+popupInstance.close();
+
+// Crear instancia de la clase PopupWithImage
+const popupWithImage = new PopupWithImage(".image-popup");
+popupWithImage.setEventListeners();
+
+// Crear instancia de la clase PopupWithForm
+const popupProfile = new PopupWithForm(".popup", ({ name, about }) => {
+  // Lógica para manejar el envío del formulario
+  userInfo.setUserInfo({ name, about });
+});
+popupProfile.setEventListeners();
+
+const popupTarjeta = new PopupWithForm(".popup_tarjeta", ({ title, url }) => {
+  const card = new Card({ name: title, link: url }, ".template", {
+    handleCardClick: showImagePopup,
+  });
+  const newCardElement = card.generateCard();
+  elementsContainer.prepend(newCardElement);
+});
+popupTarjeta.setEventListeners();
+
+// Crear instancia de la clase UserInfo
+const userInfo = new UserInfo({
+  nameSelector: ".profile__name",
+  roleSelector: ".profile__role",
+});
+
 addButton.addEventListener("click", () => {
   titleInput.value = "";
   urlInput.value = "";
-  popupTarjeta.classList.add("popup-tarjeta_opened");
-  document.addEventListener("keydown", escapeKeyHandler);
+  popupTarjeta.open();
 });
 
 editButton.addEventListener("click", () => {
   nameInput.value = nameElement.textContent;
   aboutMeInput.value = roleElement.textContent;
-  popup.classList.add("popup_opened");
-  document.addEventListener("keydown", escapeKeyHandler);
+  popupProfile.open();
 });
 
-closeEditButton.addEventListener("click", () => {
-  popup.classList.remove("popup_opened");
-});
-
-saveEditButton.addEventListener("click", () => {
-  nameElement.textContent = nameInput.value;
-  roleElement.textContent = aboutMeInput.value;
-  popup.classList.remove("popup_opened");
-  document.removeEventListener("keydown", escapeKeyHandler);
-});
-
-saveCardButton.addEventListener("click", () => {
-  const title = titleInput.value;
-  const url = urlInput.value;
-
-  if (title && url) {
-    const card = new Card({ name: title, link: url }, ".template");
-    const newCardElement = card.generateCard();
-    elementsContainer.prepend(newCardElement);
-
-    titleInput.value = "";
-    urlInput.value = "";
-
-    popupTarjeta.classList.remove("popup-tarjeta_opened");
-  } else {
-    alert("Por favor, complete ambos campos: título y enlace URL.");
-  }
-});
-
-imagePopup
-  .querySelector(".image-popup__close-button")
-  .addEventListener("click", () => {
-    closeImagePopup();
-  });
-
-closeCardButton.addEventListener("click", () => {
-  popupTarjeta.classList.remove("popup-tarjeta_opened");
-  document.removeEventListener("keydown", escapeKeyHandler);
-});
+section.rendererItems();

@@ -25,6 +25,10 @@
   transition: opacity 0.3s ease;
 }
 
+.form__submit:disabled {
+  background-color: #545454;
+}
+
 .form__submit:hover {
   opacity: 0.5;
 }

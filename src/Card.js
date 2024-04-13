@@ -1,10 +1,9 @@
-import { openImagePopup } from "./utils.js";
-
 export default class Card {
-  constructor(data, templateSelector) {
+  constructor(data, templateSelector, { handleCardClick }) {
     this._name = data.name;
     this._link = data.link;
     this._templateSelector = templateSelector;
+    this._handleCardClick = handleCardClick;
   }
 
   _getTemplate() {
@@ -27,7 +26,7 @@ export default class Card {
       likeButton.classList.toggle("element__button_liked");
     });
     imageNode.addEventListener("click", () => {
-      openImagePopup(imageNode);
+      this._handleCardClick(this._name, this._link);
     });
   }
 
