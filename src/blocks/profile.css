@@ -4,14 +4,47 @@
   align-items: center;
   width: 282px;
   height: 365px;
+  position: relative;
 }
 
 .profile__avatar {
+  position: relative;
   width: 120px;
   height: 120px;
   border-radius: 50%;
   margin-bottom: 30px;
   margin-top: 42px;
+  overflow: hidden;
+}
+
+.profile__avatar-image {
+  width: 100%;
+}
+
+.overlay {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  top: 0;
+}
+
+.profile__edit-button-icon {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border: 1px solid #ffffff79;
+  background-color: #000000;
+  transition: opacity 0.5s ease;
+}
+
+.profile__avatar:hover .overlay {
+  opacity: 0.6;
 }
 
 .profile__data {

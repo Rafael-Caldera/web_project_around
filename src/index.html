@@ -27,12 +27,21 @@
         />
       </header>
       <section class="profile">
-        <img
-          src="<%=require('./images/Vector-Avatar.svg')%>"
-          alt="foto de perfil de un señor mayor con
-        un gorro rojo"
-          class="profile__avatar"
-        />
+        <div class="profile__avatar">
+          <img
+            class="profile__avatar-image"
+            src="<%=require('./images/Vector-Avatar.svg')%>"
+            alt="foto de perfil
+          de un señor mayor con un gorro rojo"
+          />
+          <div class="overlay">
+            <img
+              src="<%=require('./images/Vector-edit-button.svg')%>"
+              alt="edit button"
+              class="profile__edit-button-icon"
+            />
+          </div>
+        </div>
         <div class="profile__data">
           <div class="profile__name-area">
             <p class="profile__name">Jacques Cousteau</p>
@@ -58,7 +67,7 @@
       </section>
       <div class="popup" id="popup">
         <div class="popup__container">
-          <h2 class="popup__container-perfil">Editar perfil</h2>
+          <h2 class="popup__title">Editar perfil</h2>
           <form class="form" id="form-profile">
             <input
               type="text"
@@ -97,7 +106,7 @@
       </div>
       <div class="popup popup_tarjeta" id="popup-tarjeta">
         <div class="popup__container">
-          <h2 class="popup__container-tarjeta">Nuevo Lugar</h2>
+          <h2 class="popup__title">Nuevo Lugar</h2>
           <form class="form">
             <input
               type="text"
@@ -151,6 +160,47 @@
           </div>
         </div>
       </div>
+      <div class="popup popup_confirm" id="confirmPopup">
+        <div class="popup__content">
+          <h2 class="popup__title">¿Estás seguro/a?</h2>
+          <button
+            class="popup__confirm-button popup__confirm-button_yes"
+            id="confirmYes"
+          >
+            Sí
+          </button>
+          <button
+            class="popup__confirm-button popup__confirm-button_no"
+            id="confirmNo"
+          >
+            No
+          </button>
+        </div>
+      </div>
+      <div class="popup popup_avatar" id="avatarPopup">
+        <div class="popup__container">
+          <button id="closeAvatarPopup" class="popup__container-close-button">
+            <img
+              src="<%=require('./images/Close-Icon-PNG.png')%>"
+              alt="close button"
+              class="popup__container-close-button-image"
+            />
+          </button>
+          <h2 class="popup__title">Cambiar foto de perfil</h2>
+          <form id="avatarForm" class="form">
+            <input
+              type="url"
+              id="avatarUrlInput"
+              name="avatar"
+              placeholder="URL de la imagen Avatar"
+              required
+              class="form__input"
+            />
+            <div class="form__error" id="avatarUrlInput-error"></div>
+            <button type="submit" class="form__submit">Guardar</button>
+          </form>
+        </div>
+      </div>
       <section class="elements"></section>
       <footer class="footer">
         <p class="footer__copyright">&copy; 2023 Around The U.S.</p>
@@ -172,10 +222,13 @@
         </div>
         <div class="element__rectangle">
           <h2 class="element__place">Yosemite Valley</h2>
-          <button
-            class="element__button element__button_liked"
-            id="likeButton"
-          ></button>
+          <div class="element__likes">
+            <button
+              class="element__button element__button_liked"
+              id="likeButton"
+            ></button>
+            <div class="element__likes-count">0</div>
+          </div>
         </div>
       </div>
     </template>

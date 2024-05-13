@@ -23,30 +23,30 @@
   display: flex;
 }
 
-.popup__container-tarjeta {
-  font-size: 18px;
+.popup__title {
+  font-size: 24px;
   font-weight: 900;
-  line-height: 22px;
+  line-height: 29px;
   letter-spacing: 0em;
   text-align: left;
   margin-bottom: 70px;
 }
 
-.popup-tarjeta__container-close-button {
+.popup__container-close-button {
   position: absolute;
-  right: 8px;
-  top: -45px;
+  right: -30px;
+  top: -35px;
   border: none;
   background-size: cover;
   cursor: pointer;
-  background-color: #000000;
+  background-color: transparent;
 }
 
-.popup-tarjeta__container-close-button:hover {
+.popup__container-close-button:hover {
   opacity: 0.5;
 }
 
-.popup-tarjeta__container-close-button-image {
+.popup__container-close-button-image {
   width: 20px;
   height: 20px;
 }

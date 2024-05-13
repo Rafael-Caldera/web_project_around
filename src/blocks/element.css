@@ -63,6 +63,23 @@
   opacity: 0.5;
 }
 
+.element__likes {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 35px;
+  width: 21px;
+}
+
+.element__likes-count {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-right: 2px;
+  color: rgb(177, 5, 5);
+}
+
 .element__trash-image {
   position: absolute;
   top: 18px;
